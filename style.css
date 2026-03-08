@@ -1,0 +1,74 @@
+body {
+    font-family: 'Segoe UI', 'Nyala', 'Kefa', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* ለስልክ ምቹ እንዲሆን */
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.profile-box {
+    background-color: white;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden; /* ምስሉ ከሳጥኑ እንዳይወጣ */
+    transition: 0.3s;
+    padding-bottom: 20px;
+}
+
+.profile-box:hover {
+    transform: translateY(-10px);
+}
+
+.profile-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.my-link {
+    display: inline-block;
+    background-color: #0088cc;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.search-section {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #0088cc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-section button {
+    padding: 10px 20px;
+    background-color: #0088cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
