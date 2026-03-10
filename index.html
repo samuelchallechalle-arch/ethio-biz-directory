@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <title>የኢትዮጵያ ቢዝነስ ማውጫ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>የኢትዮጵያ ቢዝነስ ማውጫ</h1>
+        <p>የሚፈልጉትን ቢዝነስ እዚህ ያግኙ</p>
+    </header>
+<section class="search-section">
+    <input type="text" id="searchInput" placeholder="የቢዝነስ ስም እዚህ ይፈልጉ...">
+    <button onclick="searchBusiness()">ፈልግ</button>
+</section>
+    <main class="container">
+    <div class="profile-box">
+        <img src="cafe.jpg" alt="ካፌ">
+        <h2>ሰላም ካፌ</h2>
+        <p>ምርጥ የኢትዮጵያ ባህላዊ ምግቦች እናቀርባለን።</p>
+        <a href="cafe.html" class="my-link">ዝርዝር ይመልከቱ</a>
+    </div> <div class="profile-box">
+        <img src="clothes.jpg" alt="ልብስ ቤት">
+        <h2>አቢሲኒያ የባህል ልብሶች</h2>
+        <p>ለሰርግ እና ለተለያዩ በዓላት የሚሆኑ ዘመናዊ የባህል ልብሶች።</p>
+       <a href="clothes.html" class="my-link">ዝርዝር ይመልከቱ</a>
+    </div> <div class="profile-box">
+        <img src="computer.jpg" alt="ኮምፒውተር">
+        <h2>ሳሚ ኮምፒውተር ጥገና</h2>
+        <p>ማንኛውንም ላፕቶፕ እና ዴስክቶፕ በጥራት እንጠግናለን።</p>
+       <a href="repair.html" class="my-link">ዝርዝር ይመልከቱ</a>
+    </div> </main>
+    <footer>
+        <p>&copy; 2026 የቢዝነስ ማውጫ - ሁሉም መብቱ የተጠበቀ ነው</p>
+    </footer>
+<script>
+function searchBusiness() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let boxes = document.getElementsByClassName('profile-box');
+
+    for (let i = 0; i < boxes.length; i++) {
+        let title = boxes[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+        if (title.includes(input)) {
+            boxes[i].style.display = "";
+        } else {
+            boxes[i].style.display = "none";
+        }
+    }
+}
+</script>
+</body>
+</html>
