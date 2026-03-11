@@ -12,13 +12,11 @@ body {
     background-color: #f0f2f5;
     text-align: center;
 }
-
 header {
     background-color: #333;
     color: white;
     padding: 30px 0;
 }
-
 .container {
     display: flex;
     flex-wrap: wrap; /* ለስልክ ምቹ እንዲሆን */
@@ -26,7 +24,6 @@ header {
     gap: 20px;
     padding: 20px;
 }
-
 .profile-box {
     background-color: white;
     width: 300px;
@@ -36,17 +33,14 @@ header {
     transition: 0.3s;
     padding-bottom: 20px;
 }
-
 .profile-box:hover {
     transform: translateY(-10px);
 }
-
 .profile-box img {
     width: 100%;
     height: 180px;
     object-fit: cover;
 }
-
 .my-link {
     display: inline-block;
     background-color: #0088cc;
@@ -62,7 +56,6 @@ header {
     justify-content: center;
     gap: 10px;
 }
-
 #searchInput {
     padding: 10px;
     width: 300px;
@@ -70,7 +63,6 @@ header {
     border-radius: 5px;
     outline: none;
 }
-
 .search-section button {
     padding: 10px 20px;
     background-color: #0088cc;
@@ -78,5 +70,67 @@ header {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
 }
+header {
+    background-color: #1a5f7a; /* ይበልጥ ጥቁር ያለ ሰማያዊ */
+    padding: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* በጽሁፉ ጀርባ ትንሽ ጥላ (Shadow) ይሰጣል */
+}
+.profile-box {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* ሳጥኖቹ እንዲጎሉ ትንሽ ጥላ ጨምርባቸው */
+    transition: transform 0.3s ease; /* አይጤ (Mouse) ሲያርፍበት እንዲንቀሳቀስ */
+}
+.profile-box:hover {
+    transform: translateY(-5px); /* አይጤ ሲያርፍበት ትንሽ ከፍ ይላል */
+}
+
+.my-link {
+    background-color: #c8815f; /* ለየት ያለ የቡና ቀለም (ለአዝራሮች) */
+    border-radius: 25px; /* አዝራሮቹ እንዲድበሰበሱ ያደርጋል */
+    padding: 10px 25px;
+}
+/* የአስተያየት ክፍል ዲዛይን */
+.testimonials {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin-top: 30px;
+    border-radius: 15px;
+}
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap; /* ለሞባይል ስልክ እንዲመች */
+    justify-content: center;
+    gap: 20px;
+}
+.testimonial-card {
+    background: #f9f9f9;
+    border-left: 5px solid #1a5f7a; /* በጎን በኩል የሚያምር መስመር */
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-style: italic;
+}
+.testimonial-card h4 {
+    margin-top: 10px;
+    color: #1a5f7a;
+    font-style: normal;
+}
+/* ስክሪኑ ከ 768px ካነሰ (ለሞባይል ስልኮች) የሚሰራ ኮድ */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column; /* ሳጥኖቹ አንዱ ከሌላው በታች እንዲሆኑ ያደርጋል */
+        align-items: center;
+    }
+
+    .profile-box {
+        width: 90%; /* በስልክ ስክሪን ላይ ሳጥኑ ሰፋ ብሎ እንዲታይ */
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 24px; /* በስልክ ሲሆን የርዕሱ ጽሁፍ ትንሽ እንዲያንስ */
+    }
+}
+
