@@ -56,6 +56,48 @@ function searchBusiness() {
     <h3>ለማንኛውም አስተያየት ወይም ጥያቄ</h3>
     <a href="https://t.me/sami_chali" class="my-link" style="background-color: #0088cc;">በቴሌግራም ያናግሩን</a>
 </div>
+    <section id="order-section" style="padding: 40px 20px; background-color: #f9f9f9; border-radius: 15px; margin: 20px auto; max-width: 600px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h2 style="text-align: center; color: #333;">ዕቃ ለማዘዝ እዚህ ይሙሉ</h2>
+    <p style="text-align: center; color: #666;">የሚፈልጉትን ይምረጡና ትዕዛዝዎን በቴሌግራም ይላኩ</p>
+    
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+        <label style="font-weight: bold;">የእርስዎ ስም</label>
+        <input type="text" id="customerName" placeholder="ስምዎን ያስገቡ" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
+
+        <label style="font-weight: bold;">የሚፈልጉት ዕቃ/አገልግሎት</label>
+        <select id="productSelect" style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
+            <option value="ባህላዊ ልብስ">ባህላዊ ልብስ</option>
+            <option value="የኮምፒውተር ጥገና">የኮምፒውተር ጥገና</option>
+            <option value="ምግብ (ካፌ)">ምግብ (ካፌ)</option>
+            <option value="ሌላ">ሌላ</option>
+        </select>
+
+        <label style="font-weight: bold;">ተጨማሪ መልዕክት</label>
+        <textarea id="orderNote" placeholder="ተጨማሪ ፍላጎት ካለዎት እዚህ ይጻፉ..." style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; height: 100px;"></textarea>
+
+        <button onclick="sendOrder()" style="background-color: #0088cc; color: white; padding: 15px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold;">
+            ትዕዛዝ በቴሌግራም ላክ
+        </button>
+    </div>
+</section>
+
+<script>
+function sendOrder() {
+    // መረጃዎቹን ከፎርሙ ላይ መሰብሰብ
+    const name = document.getElementById('customerName').value;
+    const product = document.getElementById('productSelect').value;
+    const note = document.getElementById('orderNote').value;
+    
+    // የእርስዎን ቴሌግራም ዩዘርኔም እዚህ ይተኩ
+    const telegramUsername = "sami_chali"; // @ ምልክቱን አይጨምሩ
+    
+    // የቴሌግራም መልዕክት መፍጠር
+    const message = `አዲስ ትዕዛዝ አለ!%0A%0Aስም፦ ${name}%0Aየታዘዘው ዕቃ፦ ${product}%0Aተጨማሪ መልዕክት፦ ${note}`;
+    
+    // ወደ ቴሌግራም መላክ
+    window.open(`https://t.me/${telegramUsername}?text=${message}`, '_blank');
+}
+</script>
     <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
